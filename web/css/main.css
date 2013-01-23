@@ -1,0 +1,10 @@
+
+#menu {
+    border-bottom: 1px solid #DDDDDD;
+    padding: 5px;
+}
+#menu li {
+    display: inline;
+    list-style-type: none;
+    margin-right: 5px;
+}

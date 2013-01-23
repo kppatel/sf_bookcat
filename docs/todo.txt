@@ -1,0 +1,1 @@
+- read symfony documentation at: http://symfony.com/legacy/doc/gentle-introduction (chap 1 to 4) - pending

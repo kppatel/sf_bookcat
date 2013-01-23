@@ -1,0 +1,31 @@
+Author:
+  connection: doctrine
+  tableName: authors
+  actAs: [Timestampable]
+  columns:
+    id: { type: integer(4), primary: true, autoincrement: true }
+    name: { type: string(50), notnull: true }
+
+Book:
+  connection: doctrine
+  tableName: books
+  actAs: [Timestampable]
+  columns:
+    id: { type: integer(4), primary: true, autoincrement: true }
+    title: { type: string(50), notnull: true }
+    author_id: { type: integer(4), notnull: true }
+    category_id: { type: integer(4), notnull: true }
+    reading_status: { type: enum(6), values: [Read, Unread], notnull: true, default: Unread }
+    rating: { type: integer(4), notnull: true, default: 1 }
+    description: { type: string(), notnull: false }
+  relations:
+    Author: { local: author_id, foreign: id, type: one }
+    Category: { local: category_id, foreign: id, type: one }
+
+Category:
+  connection: doctrine
+  tableName: categories
+  actAs: [Timestampable]
+  columns:
+    id: { type: integer(4), primary: true, autoincrement: true }
+    name: { type: string(50), notnull: true }

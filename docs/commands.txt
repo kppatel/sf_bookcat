@@ -1,0 +1,7 @@
+php lib/vendor/symfony/data/bin/symfony generate:project sf_bookcat
+./symfony generate:app frontend
+./symfony doctrine:build-schema
+./symfony doc:build --all
+./symfony doc:generate-module --with-show --non-verbose-templates frontend books Book
+./symfony doc:generate-module frontend authors Author
+./symfony doc:generate-module frontend categories Category
