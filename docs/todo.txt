@@ -1,1 +1,3 @@
 - read symfony documentation at: http://symfony.com/legacy/doc/gentle-introduction (chap 1 to 4) - pending
+- change reading status to is read - done
+- read http://symfony.com/legacy/doc/doctrine/1_2/en/04-schema-files, http://net.tutsplus.com/articles/editorials/why-2013-is-the-year-of-php/

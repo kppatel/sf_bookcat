@@ -11,30 +11,30 @@ Doctrine_Manager::getInstance()->bindComponent('Book', 'doctrine');
  * @property string $title
  * @property integer $author_id
  * @property integer $category_id
- * @property enum $reading_status
+ * @property boolean $is_read
  * @property integer $rating
  * @property string $description
  * @property Author $Author
  * @property Category $Category
  * 
- * @method integer  getId()             Returns the current record's "id" value
- * @method string   getTitle()          Returns the current record's "title" value
- * @method integer  getAuthorId()       Returns the current record's "author_id" value
- * @method integer  getCategoryId()     Returns the current record's "category_id" value
- * @method enum     getReadingStatus()  Returns the current record's "reading_status" value
- * @method integer  getRating()         Returns the current record's "rating" value
- * @method string   getDescription()    Returns the current record's "description" value
- * @method Author   getAuthor()         Returns the current record's "Author" value
- * @method Category getCategory()       Returns the current record's "Category" value
- * @method Book     setId()             Sets the current record's "id" value
- * @method Book     setTitle()          Sets the current record's "title" value
- * @method Book     setAuthorId()       Sets the current record's "author_id" value
- * @method Book     setCategoryId()     Sets the current record's "category_id" value
- * @method Book     setReadingStatus()  Sets the current record's "reading_status" value
- * @method Book     setRating()         Sets the current record's "rating" value
- * @method Book     setDescription()    Sets the current record's "description" value
- * @method Book     setAuthor()         Sets the current record's "Author" value
- * @method Book     setCategory()       Sets the current record's "Category" value
+ * @method integer  getId()          Returns the current record's "id" value
+ * @method string   getTitle()       Returns the current record's "title" value
+ * @method integer  getAuthorId()    Returns the current record's "author_id" value
+ * @method integer  getCategoryId()  Returns the current record's "category_id" value
+ * @method boolean  getIsRead()      Returns the current record's "is_read" value
+ * @method integer  getRating()      Returns the current record's "rating" value
+ * @method string   getDescription() Returns the current record's "description" value
+ * @method Author   getAuthor()      Returns the current record's "Author" value
+ * @method Category getCategory()    Returns the current record's "Category" value
+ * @method Book     setId()          Sets the current record's "id" value
+ * @method Book     setTitle()       Sets the current record's "title" value
+ * @method Book     setAuthorId()    Sets the current record's "author_id" value
+ * @method Book     setCategoryId()  Sets the current record's "category_id" value
+ * @method Book     setIsRead()      Sets the current record's "is_read" value
+ * @method Book     setRating()      Sets the current record's "rating" value
+ * @method Book     setDescription() Sets the current record's "description" value
+ * @method Book     setAuthor()      Sets the current record's "Author" value
+ * @method Book     setCategory()    Sets the current record's "Category" value
  * 
  * @package    Book Catelog
  * @subpackage model
@@ -67,16 +67,10 @@ abstract class BaseBook extends sfDoctrineRecord
              'notnull' => true,
              'length' => 4,
              ));
-        $this->hasColumn('reading_status', 'enum', 6, array(
-             'type' => 'enum',
-             'values' => 
-             array(
-              0 => 'Read',
-              1 => 'Unread',
-             ),
+        $this->hasColumn('is_read', 'boolean', null, array(
+             'type' => 'boolean',
              'notnull' => true,
-             'default' => 'Unread',
-             'length' => 6,
+             'default' => false,
              ));
         $this->hasColumn('rating', 'integer', 4, array(
              'type' => 'integer',

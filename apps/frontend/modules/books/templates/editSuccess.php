@@ -1,3 +1,8 @@
-<h1>Edit Book</h1>
+<div id="sf_admin_container">
 
-<?php include_partial('form', array('form' => $form)) ?>
+	<h2>Edit Book</h2>
+
+	<div id="sf_admin_content">
+		<?php include_partial('form', array('form' => $form)) ?>
+	</div>
+</div>

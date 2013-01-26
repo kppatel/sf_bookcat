@@ -15,7 +15,7 @@ Book:
     title: { type: string(50), notnull: true }
     author_id: { type: integer(4), notnull: true }
     category_id: { type: integer(4), notnull: true }
-    reading_status: { type: enum(6), values: [Read, Unread], notnull: true, default: Unread }
+    is_read: { type: boolean, notnull: true, default: false }
     rating: { type: integer(4), notnull: true, default: 1 }
     description: { type: string(), notnull: false }
   relations:
