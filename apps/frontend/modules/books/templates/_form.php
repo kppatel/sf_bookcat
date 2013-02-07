@@ -28,7 +28,7 @@
       </div>
 
       <div class="sf_admin_form_row sf_admin_text">
-        <?php echo $form['is_read']->renderLabel() ?>
+        <?php echo $form['is_read']->renderLabel('Reading Status') ?>
         <?php echo $form['is_read']->render() ?>
         <?php echo $form['is_read']->renderError() ?>
       </div>
